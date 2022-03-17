@@ -102,13 +102,13 @@ print('Quantity Sold:',average_qty.T.mean())
 '''
 # 7. Create a new dataframe for only those produce that have sold between 11,500 to 12,000 (quantity)
 
+cost = produce.loc["Cost Per Pound"]
 quantity = produce.loc["Quantity Sold"]
+total = produce.loc["Total Sale"]
 produce_range = quantity[(quantity >= 11500) & (quantity <= 12000)]
 
-print('7. Create a new dataframe for only those produce that have sold between 11,500 to 12,000 (quantity)')
-print()
-print(produce_range)
-#should be 17 entries
+#print('7. Create a new dataframe for only those produce that have sold between 11,500 to 12,000 (quantity)')
+#print()
+#print(produce_range)
 
 # 8. What is the total sales for the products in the above new dataframe? (print out ONLY total sales)
-
