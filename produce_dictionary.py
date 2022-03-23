@@ -60,15 +60,19 @@ print(produce)
 
 # 2. Produce that had the highest and lowest sales in total sales (both name of produce and value)
 
-highest_fruit = produce['Total Sale'].idxmax()
 highest_total_sale = produce['Total Sale'].max()
-lowest_fruit = produce['Total Sale'].idxmin()
+highest = produce[produce['Total Sale'] == highest_total_sale].index.values
 lowest_total_sale = produce['Total Sale'].min()
+lowest = produce[produce['Total Sale'] == lowest_total_sale].index.values
+
+#Or could use .idxmax() and .idxmin() to find the index name for the highest or lowest total sale
+#highest = produce['Total Sale'].idxmax()
+#lowest = produce['Total Sale'].idxmin()
 
 print('2. Produce that had the highest and lowest sales in total sales (both name of produce and value)')
 print()
-print(highest_fruit,':',highest_total_sale)
-print(lowest_fruit,':',lowest_total_sale)
+print(highest,':',highest_total_sale)
+print(lowest,':',lowest_total_sale)
 
 # 3. Using 'loc', display the quantity and total sales for 'Orange' and 'Beets' (together)
 orange_beets = produce.loc[['Orange','Beets'],'Quantity Sold':]
